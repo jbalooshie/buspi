@@ -34,7 +34,7 @@ An SD card to load the Raspberry Pi OS onto your Raspberry Pi. The application t
 
 ## Setup
 
-Follow these steps to setup this project on your own Raspberry Pi and LED matrix
+Follow these steps to setup this project on your own Raspberry Pi and LED matrix.
 
 ### Raspberry Pi OS Install
 
