@@ -1,6 +1,7 @@
 # buspi
 
-A photo will go here eventually!
+![buspi application on an LED matrix](images/arriving.JPG)
+![buspi application on an LED matrix](images/approaching.JPG)
 
 ## Basic Overview
 
@@ -8,7 +9,7 @@ buspi is a Python application that runs on a Raspberry Pi single-board computer.
 
 ## Overview
 
-I was seeing ads on social media for LED displays that can scroll news, sports score, public transit info, and other personalized items. I decided it would be cool to have one in my apartment letting me know when a bus is approaching the stop on my block. This application is enabled by the [rpi-rgb-led-matrix library](https://github.com/hzeller/rpi-rgb-led-matrix), which is an awesome project that allows you to control an LED matrix with a Raspberry Pi. There are many great examples on github of people using the library to control their own displays. I referenced klinstifen's [guerillaClock repo](https://github.com/klinstifen/guerillaClock) specifically when exploring the library and learning how to write my own application.
+I was seeing ads on social media for LED displays that can scroll news, sports score, public transit info, and other personalized items. I decided it would be cool to have one in my apartment letting me know when a bus is approaching the stop on my block. This application is enabled by the [rpi-rgb-led-matrix library](https://github.com/hzeller/rpi-rgb-led-matrix), which is aproject that allows you to control an LED matrix with a Raspberry Pi. There are many great examples on github of people using the library to control their own displays. I referenced klinstifen's [guerillaClock repo](https://github.com/klinstifen/guerillaClock) specifically when exploring the library and learning how to write my own application.
 
 ## Materials
 
@@ -98,3 +99,17 @@ Test the app to ensure it is working correctly. From the train pi folder, run th
 ### Add to boot
 
 Finally, we will set up the app to run when the Pi is booted up, eliminating the need to manually run the program. Enter `sudo nano /etc/rc.local` and create a line above `exit 0` that reads `cd /home/pi/trainpi/ && sudo python app.py`. Then save and restart your Pi.
+
+## Final Setup
+
+To display the finished project, I simply sit the screen up on a table in the living room. I'd like to make a small frame for it to sit in out of wood or plastic, but I do not have the time to do so right now. I sat the Raspberry Pi board in a case I bought online, then fastened the case to the back of the matrix using double sided adhesive. I can't use the top half of the case to the bonnet, but it sits neatly on the back. I fasten the excess wires off to the side with a zip tie.
+
+![Back of LED Matrix with Pi attached](images/back.JPG)
+
+## Future Improvements
+
+Here are some items I would add/fix in a potential future iteration:
+
+- Add after hours message/timer for when the bus route is not running. Dim display during these times
+- Fix how time is calculated if the next bus is coming after midnight, but before after hours starts. Currently it calculcates it as negative time, and returns `Delay`.
+- Add notice to display if there is a delay or situation reported on the API.
